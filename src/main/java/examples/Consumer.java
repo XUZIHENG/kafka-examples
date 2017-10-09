@@ -1,6 +1,4 @@
-package examples;/**
- * Created by Administrator on 2017/9/19.
- */
+package examples;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -8,10 +6,7 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import java.util.Arrays;
 import java.util.Properties;
 
-/**
- * @date 2017/9/19
- * @time 21:05
- */
+
 public class Consumer {
 
 	private  String topicName;//消费的主题

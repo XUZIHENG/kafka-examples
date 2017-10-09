@@ -1,18 +1,10 @@
-package examples;/**
- * Created by Administrator on 2017/9/19.
- */
+package examples;
 
 import org.apache.kafka.clients.producer.*;
-
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-/**
- * @date 2017/9/19
- * @time 20:19
- */
+
 public class Producer {
 
 	private String topicName;
