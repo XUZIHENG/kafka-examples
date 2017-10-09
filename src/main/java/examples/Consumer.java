@@ -14,13 +14,10 @@ import java.util.Properties;
  */
 public class Consumer {
 
-
 	private  String topicName;//消费的主题
 
 	public Consumer(String topic){
-
 		topicName = topic;
-
 	}
 
 	public  void consume(){
@@ -32,15 +29,15 @@ public class Consumer {
 		props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 		KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
 		consumer.subscribe(Arrays.asList(topicName));
+		//消费数据
 		while (true) {
 			ConsumerRecords<String, String> records = consumer.poll(100);
 			for (ConsumerRecord<String, String> record : records)
 				System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
 		}
-
 	}
+
 	public static void main(String[] args) {
-		Consumer c = new Consumer("test-topic");
-		c.consume();
+		new Consumer("test-topic").consume();
 	}
 }

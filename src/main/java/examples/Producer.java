@@ -16,12 +16,12 @@ import java.util.Properties;
 public class Producer {
 
 	private String topicName;
+
 	public Producer(String name){
 		topicName = name;
 	}
+
 	public void sendRecords() throws IOException, InterruptedException {
-
-
 		Properties props = new Properties();
 		props.put("bootstrap.servers", "192.168.0.83:9092,192.168.0.84:9092");//kafka 集群IP
 		props.put("acks", "1");
@@ -42,7 +42,6 @@ public class Producer {
 			i++;
 		}
 		producer.close();
-
 	}
 
 	public static void main(String[] args) throws IOException, InterruptedException {
